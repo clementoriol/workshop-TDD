@@ -1,0 +1,32 @@
+a, .link {
+  text-decoration: none;
+  color: $base-link-color;
+  transition: color 0.3s ease-in-out;
+  &:active,
+  &:hover,
+  &:focus {
+    color: $base-link-color-hover;
+  }
+}
+
+.link--secondary {
+  @extend .link;
+  color: $alt-link-color;
+
+  &:active,
+  &:hover,
+  &:focus {
+    color: $alt-link-color-hover;
+  }
+}
+
+.link--light {
+  @extend .link;
+  color: #FFFFFF;
+
+  &:active,
+  &:hover,
+  &:focus {
+    color: darken(#FFFFFF, 15%);
+  }
+}

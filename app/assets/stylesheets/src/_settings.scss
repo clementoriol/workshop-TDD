@@ -1,0 +1,120 @@
+@charset "UTF-8";
+
+//----------------------------------------
+//   Base
+//----------------------------------------
+
+// Base color
+$clr-light     : #fff;
+$clr-error     : #D24A53;
+$clr-success   : #61bcbd;
+$clr-warning   : #f9b134;
+$clr-notice    : #D9EDF7;
+
+$clr-danger    : #D24A53;
+
+$clr-0-darken            : #121212;
+$clr-0-dark              : #212121;
+$clr-0                   : #333;
+$clr-0-alternate         : #666;
+$clr-0-light             : #c0c0c0;
+$clr-0-light-alernate    : #999;
+$clr-0-lighten           : #fafafa;
+$clr-0-lighten-alternate : #f7f7f7;
+
+$clr-1         : #e33c3e;
+$clr-1-light   : tint($clr-1, 50%);
+$clr-1-lighten : tint($clr-1, 85%);
+$clr-1-dark    : shade($clr-1, 15%);
+$clr-1-darken  : shade($clr-1, 30%);
+
+$clr-2         : #a32a74;
+$clr-2-light   : tint($clr-2, 50%);
+$clr-2-lighten : tint($clr-2, 95%);
+$clr-2-dark    : shade($clr-2, 15%);
+$clr-2-darken  : shade($clr-2, 30%);
+
+$clr-3         : #e93ca6;
+$clr-3-light   : tint($clr-3, 15%);
+$clr-3-dark    : shade($clr-3, 15%);
+
+$clr-4         : #ebb714;
+
+$clr-5         : #6f276d;
+$clr-5-dark    : shade($clr-5, 15%);
+
+// Social color
+$facebook    : #3b5998;
+$twitter     : #55acee;
+$linkedin    : #0077b5;
+$instagram   : #3f729b;
+$youtube     : #cd201f;
+$google-plus : #dd4b39;
+$pinterest   : #bd081c;
+
+$base-font-family   : 'Open Sans', sans-serif;
+$code-font          : 'Source Code Pro', Consolas, monospace;
+$base-font-size     : 1em;
+$base-line-height   : 1.625em;
+$base-font-color    : $clr-0;
+
+$header-font-family : $base-font-family;
+$header-line-height : 1.25em;
+$header-font-color  : $clr-0-darken;
+
+$font-size-XXXL : em(50, $em-base);
+$font-size-XXL  : em(40, $em-base);
+$font-size-XL   : em(24, $em-base);
+$font-size-L    : em(21, $em-base);
+$font-size-M    : em(18, $em-base);
+$font-size-S    : em(16, $em-base);
+$font-size-XS   : em(14, $em-base);
+$font-size-XXS  : em(12, $em-base);
+
+// Link
+$base-link-color : $clr-1;
+$base-link-color-hover : #ff4346;
+$alt-link-color: $clr-3;
+$alt-link-color-hover: $clr-3-light;
+
+// CSS3
+$rad   : rem(2);
+$trans : all .3s ease-in-out;
+
+//  Grid
+$wrapBig-max-width : em(1600, $em-base);
+$wrap-max-width    : em(1050, $em-base);
+$wrap-min-width    : em(960, $em-base);
+$gutter-width      : rem(20);
+
+// Border color
+$base-border-color : $clr-0-light;
+
+// Forms
+$form-border-color       : $clr-0-light;
+$form-border-color-hover : shade($clr-0-light, 10%) ;
+$form-border-color-focus : shade($clr-0-light, 20%);
+$form-border-radius      : $rad;
+$form-box-shadow         : none;
+$form-box-shadow-focus   : $form-box-shadow, 0 0 5px rgba(darken($form-border-color-focus, 5), 0.7);
+$color-mixin-placeholder : tint($clr-0, 60%);
+$form-font-size          : $base-font-size;
+$form-font-family        : $base-font-family;
+
+// Spacing
+$spacer   : rem(26);
+$spacer-n : 0;
+$spacer-s : $gutter-width;
+$spacer-m : $spacer * 2;
+$spacer-l : $spacer * 3;
+
+// Breakpoints (choose unit you prefer)
+$mq-s      : em(480, $em-base);
+$mq-s-up   : em(481, $em-base);
+$mq-m      : em(768, $em-base);
+$mq-m-up   : em(769, $em-base);
+$mq-l      : em(1024, $em-base);
+$mq-l-up   : em(1025, $em-base);
+
+// Element sizes
+$header-height : em(76);

@@ -1,0 +1,96 @@
+/* ================================
+/* Component : Grid
+================================ */
+
+/* Wrapper
+-------------------------- */
+
+.wrapper {
+  padding-left:  $gutter-width;
+  padding-right: $gutter-width;
+  @media (min-width: $mq-s-up ) {
+    margin-right: auto;
+    margin-left:  auto;
+    max-width: $wrap-max-width;
+    min-width: $wrap-min-width;
+  }
+}
+
+.wrapper--big {
+  max-width: $wrapBig-max-width;
+}
+
+.wrapper--small {
+  max-width: rem(800);
+  min-width: auto;
+}
+
+/* Grid
+-------------------------- */
+
+@media (min-width: $mq-s-up) {
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -#{$gutter-width/2};
+    margin-left:  -#{$gutter-width/2};
+  }
+
+  [class*=grid-] {
+    padding-left:  $gutter-width/2;
+    padding-right: $gutter-width/2;
+  }
+
+  .grid-1-2  { width: 50% }
+
+  .grid-1-4 { width: 25% }
+  .grid-2-4  { width: 50% }
+  .grid-3-4 { width: 75% }
+  .grid-4-4 { width: calc(100% - #{$gutter-width/2}); }
+
+  .grid-30-100 { width: 30% }
+
+  .grid-1-3 { width: 33.333% }
+  .grid-2-3 { width: 66.666% }
+
+  .grid-1-5 { width: 20% }
+  .grid-2-5 { width: 40% }
+  .grid-3-5 { width: 60% }
+  .grid-4-5 { width: 80% }
+
+  .grid-flex { display: flex; flex-grow: 1 }
+
+  .grid--sameHeight {
+    > [class*=grid-] {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+
+      > div {
+        flex-grow: 1;
+      }
+    }
+  }
+
+}
+
+/* Size in %
+-------------------------- */
+
+.w-25  { width: 25% }
+.w-33  { width: 33.333% }
+.w-50  { width: 50% }
+.w-66  { width: 66.666% }
+.w-75  { width: 75% }
+.w-100 { width: 100%}
+
+/* Position
+-------------------------- */
+.gridP {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gridP--spaced {
+  justify-content: space-between;
+}

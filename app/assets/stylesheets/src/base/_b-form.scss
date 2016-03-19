@@ -1,0 +1,74 @@
+input,
+label,
+select {
+
+  display: block;
+  font-family: $form-font-family;
+  font-size: $form-font-size;
+}
+
+label {
+  font-weight: bold;
+  cursor: pointer;
+  abbr {
+    display: none;
+  }
+}
+
+textarea {
+  resize: vertical;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline;
+  margin-right: $spacer-s/2;
+}
+
+input[type="file"] {
+  margin-bottom: $spacer-s;
+  padding-bottom: ($spacer-s / 3);
+  width: 100%;
+}
+
+select {
+  width: auto;
+  max-width: 100%;
+}
+
+fieldset {
+  margin: $spacer 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  border-radius: none;
+  legend {
+    margin: 0 0 $spacer 0;
+    font-size: $font-size-L;
+  }
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+fieldset + fieldset {
+  margin-top: $spacer-l;
+}
+
+input::-webkit-input-placeholder {
+  color: $color-mixin-placeholder;
+}
+
+// Firefox 18
+input:-moz-placeholder {
+  color: $color-mixin-placeholder;
+}
+
+// Firefox 19+
+input::-moz-placeholder {
+  color: $color-mixin-placeholder;
+}
+
+input:-ms-input-placeholder {
+  color: $color-mixin-placeholder;
+}

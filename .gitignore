@@ -65,4 +65,5 @@ app/assets/images/dist/
 app/assets/javascripts/dist/**
 !app/assets/javascripts/dist/.keep
 app/assets/stylesheets/src/components/icon/_icons.scss
-public
+public/**
+!public/*.html

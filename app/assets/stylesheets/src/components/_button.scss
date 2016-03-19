@@ -1,0 +1,291 @@
+%button {
+  position: relative;
+  display: inline-block;
+  align-items: center;
+  margin: 0;
+  padding: em(14,14) em(18,14);
+  line-height: 1;
+  white-space: nowrap;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: em(14);
+  font-weight: bold;
+  border-radius: $rad;
+  transition: $trans;
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-appearance: none;
+  &Truncate { @extend %truncate }
+  + [class*=button]:not('.button--block') {
+    @media (min-width: $mq-s-up) {
+      margin-left: rem(10);
+    }
+  }
+  &:disabled,
+  &.is-disabled {
+    cursor: default;
+    opacity: .45!important;
+    background-image: none!important;
+    box-shadow: none!important;
+    pointer-events: none;
+  }
+  .no-flexbox & {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.button {
+  color: $clr-light;
+  background-color: $clr-1;
+  border: 1px solid $clr-1;
+  @extend %button;
+  &:hover, &:focus {
+    color: $clr-light;
+    background:   $base-link-color-hover;
+    border-color: $base-link-color-hover;
+  }
+  &.is-active {
+    background: shade($clr-1, 40%);
+  }
+}
+
+/**
+ * Modifier : Color
+ * --------------------------------------- */
+
+.button--neutral{
+  color: lighten($clr-0, 20%);
+  background-color: lighten($clr-0-light, 10%);
+  border: 1px solid lighten($clr-0-light, 10%);
+  @extend %button;
+  &:hover, &:focus {
+    color: lighten($clr-0, 30%);
+    background-color: lighten($clr-0-light, 17%);
+    border: 1px solid lighten($clr-0-light, 17%);
+  }
+  &.is-active{
+    background-color: lighten($clr-0-light, 20%);
+  }
+}
+
+.button--secondary {
+  color: $clr-0;
+  background-color: $clr-light;
+  border: 1px solid $clr-0-light;
+  @extend %button;
+  &:hover, &:focus {
+    color: $clr-0;
+    background: $clr-0-lighten;
+    border-color: shade($clr-0-light, 10%) ;
+  }
+  &.is-active{
+    background: $clr-0-lighten;
+  }
+}
+
+.button--tertiary {
+  color: $clr-light;
+  background-color: $clr-5;
+  border: 1px solid $clr-5;
+  @extend %button;
+  &:hover, &:focus {
+    color: $clr-light;
+    background-color: lighten($clr-5, 17%);
+    border: 1px solid lighten($clr-5, 17%);
+  }
+  &.is-active{
+    background-color: lighten($clr-5, 20%);
+  }
+}
+
+.button--danger {
+  background-color: $clr-danger;
+  &:hover, &:focus {
+    background: shade($clr-danger, 20%);
+  }
+}
+
+/**
+ * Modifier : Size
+ * --------------------------------------- */
+
+.button--small {
+  padding: em(8) em(18);
+}
+
+.button--large {
+  padding-left:  em(50);
+  padding-right: em(50);
+}
+
+.button--big {
+  padding: em(20) em(64);
+  font-size: em(18);
+}
+
+.button--block {
+  display: block;
+  width: 100%;
+}
+
+.button--block + .button--block {
+  margin-top: rem(15);
+}
+
+.button--mobileFull {
+  @media (max-width: $mq-s-up) {
+    display: block;
+    width: 100%;
+  }
+}
+
+/**
+ * Button icon
+ * --------------------------------------- */
+
+.button[class*="icon-"]::before {
+  .no-flexbox & {
+    vertical-align: top;
+  }
+}
+
+.button[class*="icon-"] span {
+  @extend %visually-hidden;
+}
+
+/**
+ * Button icon + text
+ * --------------------------------------- */
+
+.button [class*="icon-"] {
+  margin-right: em(10);
+  .no-flexbox & {
+    vertical-align: middle;
+  }
+}
+
+/**
+ * Button label icon
+ * --------------------------------------- */
+
+.button--labeled [class*="icon-"],
+.button--labeled-right [class*="icon-"] {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: em(46);
+  margin-right: 0;
+}
+
+.button--labeled [class*="icon-"]::before,
+.button--labeled-right [class*="icon-"]::before {
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  text-align: center;
+  transform: translateY(-50%);
+  .no-csstransforms3d & {
+    margin-top: -0.5em;
+  }
+}
+
+/* Left label */
+
+.button--labeled {
+  padding-left: em(64)
+}
+
+.button--labeled [class*="icon-"] {
+  left: 0;
+  border-radius: $rad 0 0 $rad;
+}
+
+/* Right label */
+
+.button--labeled-right {
+  padding-right: em(64);
+}
+
+.button--labeled-right [class*="icon-"] {
+  right: 0;
+  border-radius: 0 $rad $rad 0;
+}
+
+/**
+ * Button circular
+ * --------------------------------------- */
+
+.button--circular {
+  padding: em(12);
+  border-radius: em(666);
+}
+
+/**
+ * Button grouped
+ * --------------------------------------- */
+
+.buttonGrouped .button {
+  border-radius: 0;
+  &:first-child {
+    border-radius: $rad 0 0 $rad;
+  }
+  &:last-child {
+    border-radius: 0 $rad $rad 0;
+  }
+}
+
+.buttonGrouped .button + .button {
+  margin-left: -1px;
+}
+
+/**
+ * Button Show More
+ * --------------------------------------- */
+
+.button--showMore {
+  position: relative;
+  height: 26px;
+  width: 26px;
+  line-height: 26px;
+  padding: 0;
+  border-radius: em(666);
+  background: $clr-3;
+  border: none;
+  &:hover {
+    background: tint($clr-3, 20%);
+    transform: rotate(180deg);
+  }
+  &:focus {
+    outline: none;
+  }
+  &::before,
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    content: "";
+    display: block;
+    background: $clr-light;
+    width: 10px;
+    height: 2px;
+    transition: $trans;
+  }
+  &::before {
+    transform: translateX(-50%) translateY(-50%);
+  }
+  &::after {
+    transform: translateX(-50%) translateY(-50%) rotate(90deg);
+  }
+  &.is-active {
+    background: $clr-3;
+    &::before {
+      transform: translateX(-50%) translateY(-50%) rotate(180deg);
+    }
+    &::after {
+      transform: translateX(-50%) translateY(-50%) rotate(0deg);
+    }
+  }
+}

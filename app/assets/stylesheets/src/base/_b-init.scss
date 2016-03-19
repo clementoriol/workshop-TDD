@@ -1,0 +1,35 @@
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  height: 100%;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  font-weight: 400;
+  line-height: $base-line-height;
+  color: $base-font-color;
+  background: #e5e5e5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  &.t-login {
+    background: $clr-1 url(bkg-01.jpg) center no-repeat fixed;
+    background-size: cover;
+  }
+  &.body--light, &.t-listShow, &.t-market, &.t-action {
+    background: $clr-light;
+  }
+}
+
+[tabindex="-1"]:focus {
+  outline: none !important;
+}
