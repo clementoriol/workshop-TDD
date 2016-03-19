@@ -67,3 +67,4 @@ app/assets/javascripts/dist/**
 app/assets/stylesheets/src/components/icon/_icons.scss
 public/**
 !public/*.html
+coverage

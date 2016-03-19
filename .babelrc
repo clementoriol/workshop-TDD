@@ -1,5 +1,4 @@
 {
-	"ignore": "./node_modules",
   "presets": [
     "es2015",
     "react",
@@ -7,10 +6,5 @@
   ],
   "plugins": [
     ["transform-decorators-legacy"]
-  ],
-  "env": {
-    "test": {
-      "plugins": [ "transform-decorators-legacy", "__coverage__" ]
-    }
-  }
+  ]
 }

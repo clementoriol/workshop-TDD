@@ -36,8 +36,8 @@ module.exports = function(config) {
 
     coverageReporter: {
       reporters: [
-        { type: 'text' },
-        { type: 'html' }
+        { type: 'html' },
+        { type: 'text' }
       ]
     },
 
@@ -57,7 +57,7 @@ module.exports = function(config) {
 
     // level of logging
     // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: config.LOG_DISABLE,
+    logLevel: config.LOG_INFO,
 
 
     // enable / disable watching file and executing tests whenever any file changes
@@ -81,6 +81,7 @@ module.exports = function(config) {
     browserify: {
       debug: true,
       transform: [
+        ['browserify-istanbul', { instrumenter: require('isparta') }],
         "babelify",
         "aliasify",
         "browserify-shim"
