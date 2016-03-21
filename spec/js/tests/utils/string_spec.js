@@ -27,4 +27,6 @@ describe('String Utils', () => {
     const truncatedText = truncate(testString, 200, '$');
     expect(truncatedText[truncatedText.length - 1]).toBe('$');
   });
+
+  // TODO 1: Add more tests to achieve 100% coverage
 });
