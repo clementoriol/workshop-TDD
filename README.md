@@ -8,13 +8,24 @@
 ## Project Setup
 #### 1- Clone the repo
 #### 2- Install dependencies
-Make sure you have npm installed on your system
+Make sure you have node and npm installed on your system
 
 ```
-npm --version
+node -v
+npm -v
 ```
 
-then check gulp is installed globally
+This project is intended to work with node v5.8.0.
+Usage of [nvm](https://github.com/creationix/nvm) is strongly encouraged to manage your node versions.
+Using nvm, you can install the node version needed for the project and then use it by typing :
+```
+nvm install
+nvm use
+```
+
+
+
+Then check gulp is installed globally
 
 ```
 npm list -g --depth=0 | ((grep 'gulp@\(\d\.\)\{2\}\d$' && echo 'Yeah! gulp is correctly installed') || echo "ERROR: gulp is not globally installed, please run 'npm install -g gulp'")
@@ -24,6 +35,11 @@ should print
 
 ```
 Yeah! gulp is correctly installed
+```
+
+Otherwise, install Gulp globally :
+```
+npm install gulp -g
 ```
 
 If everything looks good, install the dependencies using
