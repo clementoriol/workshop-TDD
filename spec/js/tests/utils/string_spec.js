@@ -28,5 +28,5 @@ describe('String Utils', () => {
     expect(truncatedText[truncatedText.length - 1]).toBe('$');
   });
 
-  // TODO 1: Add more tests to achieve 100% coverage
+  // TODO STEP 1: Add more tests to achieve 100% coverage
 });
