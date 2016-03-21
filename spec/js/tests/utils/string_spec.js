@@ -17,6 +17,10 @@ var testString =
 var defaultSymbol = '...';
 
 describe('String Utils', () => {
+  beforeEach(function () {
+    spyOn(console, 'error');
+  });
+
   it('should correctly truncate a string', function() {
     const truncatedText = truncate(testString, 200);
     expect(truncatedText.length).toBe(200 + defaultSymbol.length);
@@ -28,5 +32,30 @@ describe('String Utils', () => {
     expect(truncatedText[truncatedText.length - 1]).toBe('$');
   });
 
-  // TODO STEP 1: Add more tests to achieve 100% coverage
+  it('should throw a warning if the passed text is not a string', function () {
+    const truncatedText = truncate(42, 200);
+    expect(console.error).toHaveBeenCalledTimes(1);
+    // Notes :
+    // With spies, you can also check with which value the method you're spying on has been called :
+    // expect(console.error).toHaveBeenCalledWith('the value you expect');
+
+    // You can also access more info about the calls made to the spy :
+    // (http://jasmine.github.io/2.4/introduction.html#section-Other_tracking_properties)
+    // console.error.calls
+  });
+
+  it('should throw a warning if the passed limit is not a number', function () {
+    const truncatedText = truncate(testString, 'randomString');
+    expect(console.error).toHaveBeenCalledTimes(1);
+  });
+
+  it('should throw a warning if the passed limit is not a positive number', function () {
+    const truncatedText = truncate(testString, -1);
+    expect(console.error).toHaveBeenCalledTimes(1);
+  });
+
+  it('should trim space characters when needed', function () {
+    const truncatedText = truncate('text with spaces', 5);
+    expect(truncatedText).toBe('text...');
+  });
 });
