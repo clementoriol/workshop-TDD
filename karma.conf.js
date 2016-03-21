@@ -81,7 +81,10 @@ module.exports = function(config) {
     browserify: {
       debug: true,
       transform: [
-        ['browserify-istanbul', { instrumenter: require('isparta') }],
+        ['browserify-istanbul', {
+          instrumenter: require('isparta'),
+          ignore: ['**/node_modules/**', '**/spec/**']
+        }],
         "babelify",
         "aliasify",
         "browserify-shim"
