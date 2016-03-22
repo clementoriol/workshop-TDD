@@ -11,6 +11,8 @@ const fakeText = `
   tempus, vel auctor est finibus. Sed posuere.
 `;
 
+const shortText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
+
 const defaultLimit = 200;
 const defaultSuffix = '...';
 
@@ -69,6 +71,22 @@ describe('Text Limiter component', () => {
       const button = $('button.button--showMore');
       button.click();
       expect(button).toHaveClass('is-active');
+    });
+  });
+
+  describe('with a short text', function () {
+    beforeEach(function () {
+      affix('p#js-textLimiter');
+      $('#js-textLimiter').text(shortText);
+      textLimiter('#js-textLimiter');
+      this.element = $('#js-textLimiter');
+    });
+
+    it('should not truncate a text shorter than the default limit', function () {
+      const text = this.element.text();
+      expect(text.length).toBe(shortText.length);
+      expect(text[text.length]).toBe(shortText[shortText.length]);
+      expect($('.button--showMore')).not.toBeInDOM();
     });
   });
 
